@@ -1,0 +1,213 @@
+/* DEFINIZIONE COLORI E STILI BASE */
+:root {
+    --bg-color: #555453;
+    --holder-color: #7d5e00;
+    --giallo-maiz: #FFD700;
+    --bianco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--bianco);
+    scroll-behavior: smooth;
+}
+
+/* HOLDER / HEADER */
+.main-holder {
+    background-color: var(--holder-color);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+}
+
+.container-header {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.mini-logo {
+    height: 90px;
+    width: auto;
+    transition: all 0.4s ease;
+}
+
+.main-holder.shrink {
+    padding: 5px 0;
+}
+
+.main-holder.shrink .mini-logo {
+    height: 60px;
+}
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--bianco);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+}
+
+/* HERO SECTION */
+#hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.scritta-grande {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+}
+
+.payoff {
+    color: var(--bianco);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: -130px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    position: relative;
+    z-index: 10;
+}
+
+/* SEZIONI CONTENUTO */
+section {
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.container-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: var(--giallo-maiz);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+    background-color: var(--giallo-maiz);
+    margin: 15px auto 30px;
+}
+
+p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+/* ROADMAP */
+.roadmap-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.step { opacity: 0.4; flex: 1; }
+.step.done { opacity: 1; color: var(--giallo-maiz); }
+.step.active { 
+    opacity: 1; 
+    transform: scale(1.05); 
+    border: 1px solid rgba(255,215,0,0.3); 
+    padding: 20px; 
+    border-radius: 15px;
+    background: rgba(0,0,0,0.1);
+}
+.step span { display: block; font-size: 2rem; margin-bottom: 10px; }
+
+/* RICETTE GRID */
+.ricette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.ricetta-card {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid rgba(255,215,0,0.1);
+}
+
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: var(--giallo-maiz);
+}
+
+.ricetta-info { padding: 20px; text-align: left; }
+.ricetta-info h3 { color: var(--giallo-maiz); margin: 0 0 5px 0; }
+
+/* SOCIAL BUTTONS */
+.social-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-social {
+    background-color: var(--giallo-maiz);
+    color: #404040;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-social:hover {
+    transform: translateY(-5px);
+    background-color: var(--bianco);
+}
+
+footer {
+    padding: 60px 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
