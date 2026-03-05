@@ -1,213 +1,66 @@
-/* DEFINIZIONE COLORI E STILI BASE */
 :root {
     --bg-color: #555453;
     --holder-color: #7d5e00;
     --giallo-maiz: #FFD700;
     --bianco: #ffffff;
+    --nero-trasparente: rgba(0, 0, 0, 0.4);
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--bianco); line-height: 1.6; overflow-x: hidden; }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--bianco);
-    scroll-behavior: smooth;
-}
+/* HEADER */
+.main-holder { background-color: var(--holder-color); padding: 10px 0; position: fixed; width: 100%; top: 0; z-index: 1000; transition: 0.4s; }
+.container-header { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 15px; }
+.mini-logo { height: 70px; transition: 0.4s; }
+.main-holder.shrink .mini-logo { height: 50px; }
+.nav-links a { color: var(--bianco); text-decoration: none; text-transform: uppercase; font-weight: 700; font-size: 0.75rem; letter-spacing: 1px; }
 
-/* HOLDER / HEADER */
-.main-holder {
-    background-color: var(--holder-color);
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    transition: all 0.4s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-}
+/* HERO */
+#hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.scritta-grande { width: 90%; max-width: 400px; }
+.payoff { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-style: italic; margin-top: -50px; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
 
-.container-header {
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-}
+/* SEZIONI */
+section { padding: 80px 20px; text-align: center; }
+.container-content { max-width: 1000px; margin: 0 auto; }
+h2 { color: var(--giallo-maiz); text-transform: uppercase; letter-spacing: 2px; }
+.divider { width: 40px; height: 3px; background-color: var(--giallo-maiz); margin: 10px auto 30px; }
 
-.mini-logo {
-    height: 90px;
-    width: auto;
-    transition: all 0.4s ease;
-}
-
-.main-holder.shrink {
-    padding: 5px 0;
-}
-
-.main-holder.shrink .mini-logo {
-    height: 60px;
-}
-
-.nav-links {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: var(--bianco);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-}
-
-/* HERO SECTION */
-#hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.scritta-grande {
-    width: 80%;
-    max-width: 500px;
-    height: auto;
-}
-
-.payoff {
-    color: var(--bianco);
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 400;
-    font-style: italic;
-    margin-top: -130px;
-    letter-spacing: 1px;
-    text-transform: lowercase;
-    position: relative;
-    z-index: 10;
-}
-
-/* SEZIONI CONTENUTO */
-section {
-    padding: 120px 20px;
-    text-align: center;
-}
-
-.container-content {
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-h2 {
-    font-size: 2.2rem;
-    color: var(--giallo-maiz);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.divider {
-    width: 60px;
-    height: 4px;
-    background-color: var(--giallo-maiz);
-    margin: 15px auto 30px;
-}
-
-p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-}
-
-/* ROADMAP */
-.roadmap-grid {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-    gap: 20px;
-}
-
-.step { opacity: 0.4; flex: 1; }
-.step.done { opacity: 1; color: var(--giallo-maiz); }
-.step.active { 
-    opacity: 1; 
-    transform: scale(1.05); 
-    border: 1px solid rgba(255,215,0,0.3); 
-    padding: 20px; 
-    border-radius: 15px;
-    background: rgba(0,0,0,0.1);
-}
-.step span { display: block; font-size: 2rem; margin-bottom: 10px; }
-
-/* RICETTE GRID */
-.ricette-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.ricetta-card {
-    background-color: rgba(0,0,0,0.2);
-    border-radius: 15px;
+/* LAB CONTAINER (RICETTA) */
+.lab-container {
+    background: var(--nero-trasparente);
+    border-radius: 30px;
     overflow: hidden;
-    transition: 0.3s;
-    border: 1px solid rgba(255,215,0,0.1);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.video-placeholder {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background-color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-style: italic;
-    color: var(--giallo-maiz);
+.video-wrapper { width: 100%; background: #000; }
+.video-native { width: 100%; height: auto; display: block; max-height: 600px; }
+
+.info-ricetta-premium { padding: 30px; text-align: left; }
+.descrizione-top { font-size: 1.1rem; font-style: italic; color: var(--giallo-maiz); margin-bottom: 25px; }
+
+.griglia-dettagli { display: grid; grid-template-columns: 1fr; gap: 30px; }
+h3 { font-size: 1rem; color: var(--giallo-maiz); margin-bottom: 15px; border-left: 3px solid var(--giallo-maiz); padding-left: 10px; }
+
+ul { list-style: none; }
+ul li { font-size: 0.9rem; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 4px; }
+.colonna-metodo p { font-size: 0.9rem; color: #ccc; }
+.call-to-action { margin-top: 30px; font-weight: 700; color: var(--giallo-maiz); text-align: center; font-size: 1.2rem; }
+
+/* SOCIAL */
+.social-buttons { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
+.btn-social { background: var(--giallo-maiz); color: #333; padding: 18px; text-decoration: none; font-weight: 700; border-radius: 12px; text-align: center; }
+
+/* DESKTOP (PC) */
+@media (min-width: 768px) {
+    .griglia-dettagli { grid-template-columns: 1fr 1fr; }
+    .payoff { font-size: 2.8rem; margin-top: -110px; }
+    .social-buttons { flex-direction: row; justify-content: center; }
+    .info-ricetta-premium { padding: 50px; }
+    .nav-links a { font-size: 0.9rem; }
 }
 
-.ricetta-info { padding: 20px; text-align: left; }
-.ricetta-info h3 { color: var(--giallo-maiz); margin: 0 0 5px 0; }
-
-/* SOCIAL BUTTONS */
-.social-buttons {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn-social {
-    background-color: var(--giallo-maiz);
-    color: #404040;
-    padding: 15px 40px;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 50px;
-    transition: 0.3s;
-}
-
-.btn-social:hover {
-    transform: translateY(-5px);
-    background-color: var(--bianco);
-}
-
-footer {
-    padding: 60px 20px;
-    text-align: center;
-    font-size: 0.8rem;
-    opacity: 0.5;
-}
+footer { padding: 40px; text-align: center; opacity: 0.3; font-size: 0.7rem; }
