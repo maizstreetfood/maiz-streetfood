@@ -6,7 +6,6 @@
     <title>MaÏZ | L'oro del senza glutine</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -17,7 +16,7 @@
                 <a href="#progetto">Il Progetto</a>
             </nav>
             <div class="logo-center">
-                <img src="maiz-logo-2.png" alt="MaÏZ Logo" class="mini-logo" id="header-logo">
+                <img src="maiz-logo-2.png" alt="MaÏZ Logo" class="mini-logo">
             </div>
             <nav class="nav-links">
                 <a href="#ricette">Le Ricette</a>
@@ -35,20 +34,80 @@
 
     <section id="storia">
         <div class="container-content">
-            <h2>Il Fast Food Inclusivo</h2>
+            <h2>Fast Food. 100% Gluten Free.</h2>
             <div class="divider"></div>
-            <p><strong>MaÏZ</strong> nasce tra i banchi di economia: un'hamburgeria 100% Gluten Free studiata per unire gusto e sicurezza.</p>
+            <p><strong>MaÏZ</strong> è la sfida di uno studente di economia: creare un'hamburgeria che unisca la velocità e il gusto dei giganti del fast food alla sicurezza totale del senza glutine.</p>
         </div>
     </section>
 
-    <section id="progetto">
+    <section id="ricette">
         <div class="container-content">
-            <h2>Coming Soon</h2>
+            <h2>MaÏZ Lab: Il Bun 2.0</h2>
             <div class="divider"></div>
-            <div class="roadmap-grid">
-                <div class="step done"><span>01</span><p>Brand Identity</p></div>
-                <div class="step active"><span>02</span><p>Testing Burger & Piadine</p></div>
-                <div class="step"><span>03</span><p>Apertura Store</p></div>
+            
+            <div class="lab-container">
+                <div class="video-wrapper">
+                    <video controls playsinline class="video-native" poster="burger-test.jpg">
+                        <source src="video-ricetta.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="info-ricetta-premium">
+                    <p class="descrizione-top">
+                        Il pane senza glutine sa di cartone? Non nel MaÏZ Lab. 🧪🌽 
+                        Ecco la formula definitiva per un panino super elastico e morbidissimo.
+                    </p>
+
+                    <div class="griglia-dettagli">
+                        <div class="colonna-ingredienti">
+                            <h3>LA SPESA</h3>
+                            <ul>
+                                <li>300g Farina Schär Mix It</li>
+                                <li>4g Bucce di Psillio 🤫</li>
+                                <li>145g Acqua tiepida</li>
+                                <li>145g Latte tiepido</li>
+                                <li>40g Burro a pomata</li>
+                                <li>6g Lievito di birra</li>
+                                <li>7g Sale / 4g Zucchero</li>
+                            </ul>
+                        </div>
+                        <div class="colonna-metodo">
+                            <h3>IL METODO</h3>
+                            <p><strong>1. Gel Magico:</strong> Psillio in acqua (10 min). <br>
+                               <strong>2. Impasto:</strong> Unisci lievito sciolto e farina. NON aggiungere farina se appiccica! <br>
+                               <strong>3. Lievitazione:</strong> Fino al raddoppio in forno con luce accesa. <br>
+                               <strong>4. Cottura:</strong> 180°C (25 min) con vapore.</p>
+                        </div>
+                    </div>
+                    <p class="call-to-action">Pronti per il Bacon Monster? 🥓🍔</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <section id="social">
+        <div class="container-content">
+            <h2>Parma, stiamo arrivando. 🚧</h2>
+            <div class="social-buttons">
+                <a href="https://www.instagram.com/maiz.streetfood/" target="_blank" class="btn-social">Instagram</a>
+                <a href="https://www.tiktok.com/@maz.gluten.free.fastfood?lang=it-IT" target="_blank" class="btn-social">TikTok</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MaÏZ - L'oro del senza glutine</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            const header = document.getElementById("main-header");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                header.classList.add("shrink");
+            } else {
+                header.classList.remove("shrink");
+            }
+        };
+    </script>
+</body>
+</html>
